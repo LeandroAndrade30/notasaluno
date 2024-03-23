@@ -6,20 +6,21 @@ namespace LerTresNotasAluno
     {
         static void Main(string[] args)
         {
-            Aluno Aluno = new Aluno();
+            
 
             Console.WriteLine("Informe o Nome do Aluno");
-             Aluno.Nome = Console.ReadLine();
+              string nome = Console.ReadLine();
             Console.WriteLine("Informe a Nota do  Aluno no Primeiro Trimestre");
-            Aluno.Nota1 = float.Parse(Console.ReadLine());
+              float nota1 = float.Parse(Console.ReadLine());
             Console.WriteLine("Informe a Nota do  Aluno no Primeiro Segundo");
-            Aluno.Nota2 = float.Parse(Console.ReadLine());
+            float nota2 = float.Parse(Console.ReadLine());
             Console.WriteLine("Informe a Nota do  Aluno no Primeiro Terceiro");
-            Aluno.Nota3= float.Parse(Console.ReadLine());
-            float MediaPonderada = Aluno.CalcularMediaPonderada();
-            float mediaAluno = Aluno.MediaAluno(Aluno);
-            
-            
+            float nota3= float.Parse(Console.ReadLine());
+            Aluno Aluno = new Aluno(nome,nota1,nota2,nota3);
+            Console.WriteLine(Aluno);
+
+
+
 
         }
     }

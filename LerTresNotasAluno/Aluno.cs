@@ -13,6 +13,18 @@ namespace LerTresNotasAluno
         public float MediaPonderada;
 
 
+        public Aluno(string nome, float nota1,float nota2, float nota3)
+        {
+
+            Nome = nome;
+            Nota1 = nota1;
+            Nota2 = nota2;
+            Nota3 = nota3;
+
+
+        }
+
+
 
 
         public  float CalcularMediaPonderada()
@@ -22,29 +34,38 @@ namespace LerTresNotasAluno
 
         }
 
-        public static  float MediaAluno(Aluno Aluno)
+        public static  string MediaAluno(Aluno Aluno)
 
         {
             
 
-            Console.WriteLine($"A Média do Aluno {Aluno.Nome} é: {Aluno.MediaPonderada}");
+            
 
             if (Aluno.MediaPonderada >= 60)
             {
-                Console.WriteLine("\n Aluno Aprovado\n");
+                return "\nAluno Aprovado";
             }
             else
             {
-                Console.WriteLine("\n Aluno Reprovado\n");
+                float NotaFaltando = 60 - Aluno.MediaPonderada;
+                return $"\n Aluno Reprovado Faltando {NotaFaltando} para o Aluno {Aluno.Nome} ser Aprovado";
 
-                float NotaFaltando = (60 - Aluno.MediaPonderada);
 
-                Console.WriteLine($"Faltando {NotaFaltando } para o aluno {Aluno.Nome} ser aprovado");
-                
+
+
             }
-            return Aluno.MediaPonderada;
+            
             
         }
+
+        public override string ToString()
+        {
+            return $"Nome :{Nome} Media: {CalcularMediaPonderada()}, Situação: {MediaAluno(this)}";
+        }
+
+
+
+
     }
 }
 
